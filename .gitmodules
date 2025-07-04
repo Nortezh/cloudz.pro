@@ -1,0 +1,3 @@
+[submodule "my-back-office"]
+	path = web-back-office
+	url = git@github-k-toshio:Nortezh/cloudz.pro-web-back-office.git
