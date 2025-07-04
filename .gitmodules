@@ -1,9 +1,12 @@
 [submodule "api"]
 	path = api
+	branch = main
 	url = git@github-k-toshio:Nortezh/cloudz.pro-api.git
 [submodule "web-back-office"]
 	path = web-back-office
+	branch = main
 	url = git@github-k-toshio:Nortezh/cloudz.pro-web-back-office.git
 [submodule "web-portal"]
 	path = web-portal
+	branch = main
 	url = git@github-k-toshio:Nortezh/cloudz.pro-web-portal.git
