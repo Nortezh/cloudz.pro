@@ -1,0 +1,18 @@
+{
+	"folders": [
+		{
+			"path": ".",
+			"name": "cloudz.pro"
+		},
+		{
+			"path": "./api",
+		},
+		{
+			"path": "./web-back-office",
+		},
+		{
+			"path": "./web-portal",
+		}
+	],
+	"settings": {}
+}
