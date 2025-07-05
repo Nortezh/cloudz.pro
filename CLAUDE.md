@@ -38,6 +38,14 @@ See COMMIT_GUIDE.md for full emoji reference.
 
 **Important**: Do NOT include "🤖 Generated with Claude Code" or similar AI attribution in commit messages.
 
+### Git Submodule Handling
+
+When working with submodules:
+1. Commit changes within each submodule first
+2. Push submodule changes
+3. Then update parent repository's submodule references
+4. Cannot directly `git add` files inside submodules from parent directory
+
 ### Cross-Project Patterns
 
 1. **TypeScript Everywhere**: All projects use TypeScript with strict mode
