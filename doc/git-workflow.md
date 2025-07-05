@@ -21,20 +21,20 @@ git submodule update --init --recursive
    git submodule update --remote --merge
    ```
 
-3. **Make Changes in Submodule**
+3. **Make Changes in Submodule (Use ABSOLUTE paths)**
    ```bash
-   cd api  # or web-back-office
+   cd /full/path/to/cloudz.pro/api  # or web-back-office
    git checkout main
    git pull origin main
    # Make your changes
    git add .
-   git commit -m "type: 📝 description"
+   git commit -m "type: 📝 description"  # NO AI attribution!
    git push origin main
    ```
 
 4. **Update Parent Repository**
    ```bash
-   cd ..  # Back to root
+   cd /full/path/to/cloudz.pro  # Absolute path to root
    git add api  # or web-back-office
    git commit -m "chore: 🔄 update submodule reference"
    git push origin main
@@ -88,8 +88,10 @@ git commit -m "docs: 📝 update API documentation"
 git commit -m "chore: 🔄 update submodule references"
 ```
 
-### Important Rules
-- **NEVER** include "🤖 Generated with Claude Code" or AI attribution
+### Critical Commit Rules (Session Learning: 2025-07-05)
+- **NEVER** include "🤖 Generated with Claude Code" or "Co-Authored-By: Claude"
+- **NEVER** include ANY AI attribution in commit messages
+- Always use absolute paths for submodule navigation
 - Keep subject line under 50 characters
 - Use imperative mood ("add" not "added")
 - Reference issues when applicable

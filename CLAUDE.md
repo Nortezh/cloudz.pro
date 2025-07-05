@@ -39,8 +39,9 @@ pwd  # ALWAYS run this first
 ### Commits
 Format: `<type>: <emoji> <description>`
 - **Common**: `feat: ✨`, `fix: 🐛`, `docs: 📝`, `chore: 🔧`, `refactor: ♻️`
-- **NEVER** include AI attribution in commits
-- Submodules: commit inside first, then update parent
+- **CRITICAL**: NEVER include AI attribution ("🤖 Generated with", "Co-Authored-By: Claude")
+- **Submodules**: Use absolute paths (`cd /full/path/to/submodule`)
+- Commit workflow: submodule first → parent repo second
 
 ### Ports (Check before starting)
 - API: 3000 - `lsof -i :3000` before `bun start:dev`
@@ -57,10 +58,10 @@ Format: `<type>: <emoji> <description>`
    - `/api` → `bun` ONLY
    - `/web-*` → `pnpm` ONLY
 
-2. **Submodule commits require special handling:**
+2. **Submodule commits require absolute paths:**
    ```bash
-   cd api && git commit && git push
-   cd .. && git add api && git commit
+   cd /full/path/to/submodule && git commit && git push
+   cd /full/path/to/parent && git add submodule && git commit
    ```
 
 3. **Performance targets:**
