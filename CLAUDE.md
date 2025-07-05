@@ -67,6 +67,24 @@ cd ../web-back-office && pnpm install
 
 ## Development Workflow
 
+### Directory Check Before Running Commands
+
+**CRITICAL**: This is a monorepo with git submodules. Always check your current directory before running any command:
+```bash
+pwd  # Always run this first to verify your location
+```
+
+- Root directory (`/cloudz.pro`): For git operations on the parent repository
+- `/api` directory: For Bun commands and API development
+- `/web-back-office` directory: For PNPM commands and frontend development
+- `/web-portal` directory: For portal development (when implemented)
+
+Common mistakes to avoid:
+- Running `bun` commands in the web directories (use `pnpm` instead)
+- Running `pnpm` commands in the api directory (use `bun` instead)
+- Trying to commit submodule changes from the parent directory
+- Running development servers from the wrong directory
+
 ### Port Check Before Starting Services
 
 **Important**: Always check if ports are already in use before starting development servers:
