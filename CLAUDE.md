@@ -67,6 +67,16 @@ cd ../web-back-office && pnpm install
 
 ## Development Workflow
 
+### Port Check Before Starting Services
+
+**Important**: Always check if ports are already in use before starting development servers:
+- API (port 3000): Run `lsof -i :3000` or `netstat -an | grep 3000` before `bun start:dev`
+- Web Back Office (port 5173): Run `lsof -i :5173` or `netstat -an | grep 5173` before `pnpm dev`
+
+If a port is already in use, either:
+1. Stop the existing service: `kill -9 $(lsof -t -i:PORT)`
+2. Or use a different terminal/tab for the new service
+
 1. **Feature Development**:
    - Create feature branch from main
    - Work in relevant project directory
