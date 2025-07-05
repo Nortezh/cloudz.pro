@@ -1,8 +1,0 @@
----
-alwaysApply: true
-description: "Primary Package Manager"
----
-
-# Rule
-
-use pnpm as a package manager
