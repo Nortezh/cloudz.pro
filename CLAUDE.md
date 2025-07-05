@@ -20,6 +20,11 @@
 3. Commit format: Test proper format application
 4. External docs: Confirm @doc/ references work
 
+**Critical Session Learning (2025-07-05):**
+- **NEVER assume file formats** - Always investigate existing patterns first
+- **Use Read/LS tools** to explore codebase conventions before creating files
+- **Pattern Recognition**: Directory contents reveal established standards
+
 ## CRITICAL: Monorepo with Git Submodules
 
 **YOU MUST check current directory before ANY command:**

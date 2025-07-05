@@ -22,6 +22,12 @@
 4. **Validation**: Test critical functionality after optimization
 5. **Documentation**: Update @doc/ files with moved detailed content
 
+### Investigation Best Practices (Session Learning: 2025-07-05)
+1. **Always Explore First**: Use Read/LS tools to examine existing patterns before creating files
+2. **Pattern Recognition**: Directory contents and file extensions reveal established conventions
+3. **Assumption Prevention**: Never assume file formats or structures without verification
+4. **Context Gathering**: Examine similar files in the same directory for guidance
+
 ## Cross-Project Standards
 
 ### TypeScript Configuration
