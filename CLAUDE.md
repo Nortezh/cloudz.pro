@@ -8,6 +8,12 @@
 - Remove any instruction that hasn't been used in last 10 sessions
 - Consolidate similar rules into single concise statements
 
+**Auto-Update Rules:**
+- Every 10 sessions: Auto-optimize root CLAUDE.md
+- Every 5 sessions: Review project-specific CLAUDE.md files
+- Auto-remove unused instructions older than 10 sessions
+- Auto-consolidate similar rules into single statements
+
 **Validation Test After Optimization:**
 1. Directory check: `pwd` command usage
 2. Port check: Verify port checking before services

@@ -1,5 +1,27 @@
 # Development Patterns
 
+## Auto-Update Memory Rules
+
+### Root CLAUDE.md Auto-Update (Every 10 sessions)
+- Check file size against 100-line limit
+- Remove instructions unused in last 10 sessions
+- Consolidate similar rules into single statements
+- Move detailed content to @doc/ files if size exceeds 20% growth
+- Run validation tests: directory check, port check, commit format, external docs
+
+### Project-Specific CLAUDE.md Auto-Update (Every 5 sessions)
+- API: Keep under 200 lines, remove unused patterns
+- Web Back Office: Keep under 80 lines, essential commands only
+- Web Portal: Keep under 60 lines, optimize for future implementation
+- Cross-reference detailed guides instead of duplicating content
+
+### Auto-Update Workflow
+1. **Session Counter**: Track usage of each instruction/pattern
+2. **Threshold Check**: Mark unused items after specified sessions
+3. **Cleanup Phase**: Remove marked items and consolidate similar rules
+4. **Validation**: Test critical functionality after optimization
+5. **Documentation**: Update @doc/ files with moved detailed content
+
 ## Cross-Project Standards
 
 ### TypeScript Configuration
