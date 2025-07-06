@@ -20,7 +20,13 @@
 3. Commit format: Test proper format application
 4. External docs: Confirm @doc/ references work
 
-**Critical Session Learning (2025-07-05):**
+**Critical Session Learning (2025-07-06):**
+- **Validation Layers**: DTO validation conflicts with service validation - keep DTO minimal for types only
+- **Security**: NEVER expose sensitive data (emails, IDs) in error response details field
+- **P2002 Handling**: All Prisma constraint violations must use CodedConflictException
+- **Error Consistency**: Service-level validation with coded exceptions > DTO validation for business rules
+
+**Previous Session (2025-07-05):**
 - **NEVER assume file formats** - Always investigate existing patterns first
 - **Use Read/LS tools** to explore codebase conventions before creating files
 - **Pattern Recognition**: Directory contents reveal established standards

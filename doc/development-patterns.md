@@ -22,6 +22,12 @@
 4. **Validation**: Test critical functionality after optimization
 5. **Documentation**: Update @doc/ files with moved detailed content
 
+### Validation and Error Handling Best Practices (Session Learning: 2025-07-06)
+1. **Validation Layer Separation**: Keep DTO validation minimal (types only), use service validation for business rules
+2. **Security in Error Handling**: Never expose sensitive data in CodedConflictException details field
+3. **P2002 Pattern**: All Prisma constraint violations must use CodedConflictException with proper error codes
+4. **Testing Strategy**: Use e2e tests with testcontainers to validate error handling with real database
+
 ### Investigation Best Practices (Session Learning: 2025-07-05)
 1. **Always Explore First**: Use Read/LS tools to examine existing patterns before creating files
 2. **Pattern Recognition**: Directory contents and file extensions reveal established conventions
@@ -48,22 +54,54 @@
 - Access via `process.env.VARIABLE_NAME`
 
 ### Error Handling
-- Comprehensive error handling with meaningful messages
+- Use coded exceptions for consistent error responses with i18n support
+- **Security**: Never expose sensitive data (emails, IDs) in error details
+- **P2002 Pattern**: Handle Prisma constraint violations with CodedConflictException
 - Consistent error response format:
   ```json
   {
-    "statusCode": 400,
-    "message": "Descriptive error message",
-    "error": "BadRequest"
+    "statusCode": 409,
+    "code": "RESOURCE_ALREADY_EXISTS",
+    "message": "Resource already exists",
+    "details": {}, // NO sensitive data here
+    "timestamp": "2025-07-06T..."
   }
   ```
-- Log errors with context
-- Return user-friendly error messages
+- Separate validation layers: DTO (types) vs Service (business rules)
+- Log errors with context, return user-friendly messages
+
+### Validation Strategy (Session Learning: 2025-07-06)
+- **DTO Layer**: Minimal validation for types and basic transformation only
+  ```typescript
+  @IsString({ message: 'Name must be a string' })
+  @Transform(({ value }) => value?.trim())
+  name: string;
+  ```
+- **Service Layer**: Business rule validation with coded exceptions
+  ```typescript
+  if (!isValidFormat(name)) {
+    throw new CodedBadRequestException(
+      ERROR_CODES.INVALID_FORMAT,
+      {},
+      'Invalid format provided'
+    );
+  }
+  ```
+- **P2002 Error Pattern**: Standardized database constraint handling
+  ```typescript
+  if (error.code === 'P2002') {
+    throw new CodedConflictException(
+      ERROR_CODES.RESOURCE_CONFLICT,
+      {}, // Never include sensitive data
+      'Resource already exists'
+    );
+  }
+  ```
 
 ### Testing Strategy
 - Write tests for critical functionality
 - Unit tests for services and utilities
-- E2E tests for API endpoints
+- E2E tests with testcontainers for real database validation
 - Integration tests for cross-service communication
 
 ## Feature Development Workflow
