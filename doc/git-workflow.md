@@ -40,6 +40,16 @@ git submodule update --init --recursive
    git push origin main
    ```
 
+### Critical Workflow Order (Session Learning: 2025-07-06)
+**ALWAYS follow this sequence:**
+1. **Commit and push submodule first** - Work in `/api` or `/web-back-office`
+2. **Navigate to parent directory** - Use `cd /full/path/to/cloudz.pro`
+3. **Add submodule reference** - `git add api` (or relevant submodule)
+4. **Commit parent repository** - Update submodule pointer
+5. **Push parent repository** - Complete the workflow
+
+**Common Mistake**: Trying to commit submodule changes from parent directory fails
+
 ### Common Issues
 
 #### "Cannot add files from submodule"

@@ -21,10 +21,11 @@
 4. External docs: Confirm @doc/ references work
 
 **Critical Session Learning (2025-07-06):**
-- **Validation Layers**: DTO validation conflicts with service validation - keep DTO minimal for types only
-- **Security**: NEVER expose sensitive data (emails, IDs) in error response details field
-- **P2002 Handling**: All Prisma constraint violations must use CodedConflictException
-- **Error Consistency**: Service-level validation with coded exceptions > DTO validation for business rules
+- **Test Infrastructure Safety**: NEVER use filesystem operations (`rm -rf`, file renaming) in tests
+- **Cross-Platform Testing**: Use environment variables over file manipulation for test setup
+- **Performance Optimization**: Database transactions + snapshots = 60-80% faster tests
+- **Modular Architecture**: Split monolithic helpers into domain-specific classes (Auth, Request, Validation)
+- **Test Command Execution**: Use `NODE_ENV=test npx jest` for E2E tests, not `bun test`
 
 **Previous Session (2025-07-05):**
 - **NEVER assume file formats** - Always investigate existing patterns first

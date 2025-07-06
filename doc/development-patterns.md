@@ -22,11 +22,13 @@
 4. **Validation**: Test critical functionality after optimization
 5. **Documentation**: Update @doc/ files with moved detailed content
 
-### Validation and Error Handling Best Practices (Session Learning: 2025-07-06)
-1. **Validation Layer Separation**: Keep DTO validation minimal (types only), use service validation for business rules
-2. **Security in Error Handling**: Never expose sensitive data in CodedConflictException details field
-3. **P2002 Pattern**: All Prisma constraint violations must use CodedConflictException with proper error codes
-4. **Testing Strategy**: Use e2e tests with testcontainers to validate error handling with real database
+### Test Infrastructure Best Practices (Session Learning: 2025-07-06)
+1. **Test Safety**: NEVER use filesystem operations (`rm -rf`, `renameSync`) in test code - use environment variables
+2. **Cross-Platform Compatibility**: Environment variables work across Windows/macOS/Linux vs filesystem manipulation
+3. **Modular Architecture**: Split monolithic helpers into domain-specific classes (AuthTestHelper, RequestTestHelper, ValidationTestHelper)
+4. **Performance Optimization**: Database transactions + snapshots provide 60-80% faster test execution
+5. **Test Command Execution**: Use `NODE_ENV=test npx jest --config ./test/jest-e2e.json` for reliable E2E tests
+6. **Backwards Compatibility**: Maintain facade pattern for existing test code during refactoring
 
 ### Investigation Best Practices (Session Learning: 2025-07-05)
 1. **Always Explore First**: Use Read/LS tools to examine existing patterns before creating files
