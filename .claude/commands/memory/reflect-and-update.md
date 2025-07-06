@@ -1,83 +1,84 @@
 ---
-description: Optimize memory files using systematic workflow analysis
+description: Session reflection and strategic memory updates
 allowed-tools:
   - Read
   - Edit
   - MultiEdit
   - TodoWrite
-  - Bash
 ---
 
-# Memory Optimization Workflow
+# Reflect and Update Memory
 
 ## Context
-- Memory structure: Root (26 lines), API (83 lines), Web (58 lines)
-- Token efficiency target: <200 total lines
-- Documentation: @doc/ files for detailed patterns
+Optimized memory: Root (26), API (83), Web (58) = 167 lines | Token-efficient structure
 
-## Your Task
+## Task
 
-Analyze session patterns and optimize memory files for maximum efficiency.
+Extract critical learnings from this session and strategically update memory files.
 
-### 1. Usage Pattern Analysis
-```bash
-# Check current memory file sizes
-wc -l CLAUDE.md api/CLAUDE.md web-back-office/CLAUDE.md
+### Step 1: Session Analysis
+**Identify high-value insights:**
+- Commands/workflows forgotten that caused significant delays
+- Critical warnings that prevent major issues  
+- Patterns discovered that will be used frequently (>50% of sessions)
+- Workflow improvements with measurable impact
 
-# Identify optimization opportunities
-```
+### Step 2: Impact Assessment
+**For each potential insight, evaluate:**
+- **Frequency**: Will this be needed in >50% of future sessions?
+- **Criticality**: Does this prevent significant delays/errors?
+- **Priority**: Is this more important than existing memory content?
+- **Scope**: Root (monorepo), API (NestJS), or Web (React) specific?
 
-### 2. Content Optimization Strategy
+### Step 3: Strategic Updates
 
-**Extract to @doc/ files:**
-- Code examples >5 lines
+**Root CLAUDE.md Updates:**
+- Monorepo navigation improvements
+- Cross-project workflow enhancements  
+- Critical submodule handling patterns
+- Package manager enforcement warnings
+
+**Project-Specific Updates:**
+- **API CLAUDE.md**: NestJS/Prisma patterns, testing workflows
+- **Web CLAUDE.md**: React/TanStack Query patterns, TDD workflows
+
+**Documentation Updates:**
+- **@doc/ files**: Detailed patterns, comprehensive guides
+- Move verbose content OUT of memory files
+
+### Step 4: Update Guidelines
+
+**Add to memory files ONLY if:**
+✅ Used frequently (>50% of sessions)
+✅ Prevents significant issues/delays
+✅ More critical than existing content
+✅ Fits within size limits (Root <30, API <100, Web <80)
+
+**Move to @doc/ files:**
 - Detailed explanations
-- Comprehensive guides
-- One-time setup instructions
+- Comprehensive examples  
+- Reference material
+- One-time setup guides
 
-**Keep in memory files:**
-- Commands used >50% of sessions
-- Critical warnings that prevent issues
-- Package manager enforcement
-- Port/directory checks
+### Step 5: Anti-Patterns to Avoid
+❌ Adding dated "Session Learnings" sections
+❌ Including temporary or one-time issues  
+❌ Expanding memory files beyond size limits
+❌ Duplicating content already in @doc/ files
+❌ Meta-maintenance instructions
 
-### 3. Systematic Updates
+### Step 6: Validation
+After updates, verify:
+- Size limits maintained
+- Essential workflows preserved
+- @doc/ references functional
+- No redundant information
+- Critical warnings intact
 
-**Step 1: Content Audit**
-- Identify redundant content across files
-- Find verbose sections that can be compressed
-- Locate content that belongs in @doc/ files
+## Update Strategy
+1. **High-frequency command/warning** → Memory file
+2. **Detailed pattern/example** → @doc/ file  
+3. **One-time issue/learning** → Session notes only
+4. **Process improvement** → @doc/development-patterns.md
 
-**Step 2: Optimization**
-- Compress command listings
-- Merge similar rules
-- Replace examples with references
-- Remove temporary content
-
-**Step 3: Validation**
-- Verify essential workflows preserved
-- Check cross-references work
-- Confirm size targets met
-
-### 4. Memory File Targets
-```
-Root CLAUDE.md: <30 lines (monorepo essentials)
-API CLAUDE.md: <100 lines (NestJS quick patterns)
-Web CLAUDE.md: <80 lines (React essentials)
-```
-
-### 5. Quality Gates
-- ✅ All critical commands preserved
-- ✅ Package manager warnings maintained  
-- ✅ Cross-references to @doc/ functional
-- ✅ Size limits respected
-- ✅ No redundant information
-
-### 6. Anti-Patterns to Remove
-- ❌ Dated session content
-- ❌ Meta-maintenance instructions
-- ❌ Verbose code examples
-- ❌ Redundant tech stack info
-- ❌ Temporary workflow notes
-
-**Focus**: Maximize actionable guidance per token while maintaining full functionality.
+**Remember**: Memory files are for immediate actionable guidance, not comprehensive session logs. Focus on preventing the most common and critical issues while maintaining token efficiency.
