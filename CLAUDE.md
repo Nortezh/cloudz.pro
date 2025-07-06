@@ -21,12 +21,13 @@
 4. External docs: Confirm @doc/ references work
 
 **Critical Session Learning (2025-07-06):**
-- **E2E Testing Setup**: Playwright setup requires correct API endpoint patterns (`**/back-office/auth/*`)
-- **Authentication Mocking**: Use correct localStorage key `cloudz_auth_token` for auth state simulation
-- **Form Validation Testing**: Clear pre-filled dev credentials before testing empty form validation
-- **API Mocking Patterns**: Network interception must match actual endpoint structure in config.ts
-- **Test Reliability**: Add proper timeouts (10s) for async operations like redirects
-- **Cross-Browser E2E**: All major browsers (Chrome/Firefox/Safari) require consistent test patterns
+- **KISS Principle**: Code must be "stupid simple" - avoid over-engineering (26% complexity reduction achieved)
+- **Test Gate**: ALL unit and E2E tests MUST pass 100% before task completion
+- **Configuration Conflicts**: Separate test directories prevent tool conflicts (`app/__tests__/` vs `e2e/`)
+- **Over-Engineering Detection**: Remove complex solutions early (Error Context Provider was unnecessary)
+- **React Testing**: Wrap state updates in `act()` for proper async testing patterns
+- **Workflow Enhancement**: Created `/implement` command with built-in quality gates
+- **Tool Effectiveness**: Parallel agents excellent for research, Read/LS essential for exploration
 
 **Previous Session (2025-07-05):**
 - **NEVER assume file formats** - Always investigate existing patterns first
@@ -49,6 +50,11 @@ pwd  # ALWAYS run this first
 
 ## Quick Reference
 
+### Claude Code Commands (Custom Navigation)
+- `/project:workdir @api` - Navigate to API project directory
+- `/project:workdir @web-back-office` - Navigate to Web Back Office directory  
+- `/project:workdir @root` - Navigate to monorepo root directory
+
 ### Commits
 Format: `<type>: <emoji> <description>`
 - **Common**: `feat: ✨`, `fix: 🐛`, `docs: 📝`, `chore: 🔧`, `refactor: ♻️`
@@ -67,22 +73,29 @@ Format: `<type>: <emoji> <description>`
 
 ## Development Rules
 
-1. **IMPORTANT: Wrong package manager = build failure**
-   - `/api` → `bun` ONLY
-   - `/web-*` → `pnpm` ONLY
+1. **KISS Principle (Mandatory)**
+   - Code must be "stupid simple" - if junior dev can't understand in 5 min, simplify
+   - Functions <20 lines, avoid nesting >2 levels, self-documenting names
+   - Only create abstractions when pattern repeats 3+ times
 
-2. **Submodule commits require absolute paths:**
+2. **Test Gates (Mandatory)**
+   - `pnpm test && pnpm test:e2e` MUST pass 100% before task completion
+   - Zero test failures allowed - fix immediately, don't proceed
+   - All imported functions must be mocked completely
+
+3. **Package Manager (Critical)**
+   - `/api` → `bun` ONLY, `/web-*` → `pnpm` ONLY
+   - Wrong package manager = build failure
+
+4. **Submodule Workflow**
    ```bash
    cd /full/path/to/submodule && git commit && git push
    cd /full/path/to/parent && git add submodule && git commit
    ```
 
-3. **Performance targets:**
-   - API: < 50ms response
-   - Frontend: < 3s initial load
-   - Build: < 2 minutes
-
-4. **Security: NEVER commit secrets or API keys**
+5. **Performance & Security**
+   - API: <50ms, Frontend: <3s load, Build: <2min
+   - NEVER commit secrets or API keys
 
 ## Additional Resources (Reference only when needed)
 - Detailed patterns: @doc/development-patterns.md

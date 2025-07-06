@@ -22,14 +22,15 @@
 4. **Validation**: Test critical functionality after optimization
 5. **Documentation**: Update @doc/ files with moved detailed content
 
-### E2E Testing Best Practices (Session Learning: 2025-07-06)
-1. **API Mocking Precision**: Use exact endpoint patterns from config.ts (`**/back-office/auth/*` not `**/auth/*`)
-2. **Authentication State**: Use correct localStorage key (`cloudz_auth_token`) for auth simulation
-3. **Form Validation Testing**: Clear pre-filled development credentials before testing empty form validation
-4. **Async Operations**: Add proper timeouts (10s) for redirects and state changes
-5. **Cross-Browser Reliability**: Ensure patterns work consistently across Chrome/Firefox/Safari
-6. **Semantic Selectors**: Use `getByRole`, `getByLabel` over CSS selectors for maintainability
-7. **Test Organization**: Use proper `beforeEach` setup and isolated test data
+### TDD Error Integration Best Practices (Session Learning: 2025-07-06)
+1. **KISS Principle Application**: Start simple, remove over-engineering early (26% complexity reduction achieved)
+2. **Parallel Agent Strategy**: Use multiple agents simultaneously for complex information gathering
+3. **Red-Green-Refactor-Simplify**: Extended TDD cycle with mandatory simplification phase
+4. **Test Configuration Isolation**: Separate directories prevent tool conflicts (`app/__tests__/` vs `e2e/`)
+5. **Mock Completeness**: Include ALL imported functions in test mocks to prevent runtime failures
+6. **Over-Engineering Detection**: Remove complex abstractions (Error Context Provider was unnecessary)
+7. **Test Gate Enforcement**: 100% test pass rate required before task completion
+8. **React Testing Compliance**: Wrap state updates in `act()` for proper async patterns
 
 ### Investigation Best Practices (Session Learning: 2025-07-05)
 1. **Always Explore First**: Use Read/LS tools to examine existing patterns before creating files
