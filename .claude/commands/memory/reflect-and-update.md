@@ -1,79 +1,83 @@
 ---
-description: Reflect on session learnings and update root and project memory files
+description: Optimize memory files using systematic workflow analysis
 allowed-tools:
   - Read
   - Edit
   - MultiEdit
   - TodoWrite
-  - TodoRead
+  - Bash
 ---
 
-# Reflect and Update Memory Files
+# Memory Optimization Workflow
 
 ## Context
-- Current project: Cloudz.pro (monorepo with git submodules)
-- Memory files location: Root `CLAUDE.md`, project-specific `CLAUDE.md` files, and `@doc/` files
-- Auto-update rules: Root (10 sessions), Projects (5 sessions)
+- Memory structure: Root (26 lines), API (83 lines), Web (58 lines)
+- Token efficiency target: <200 total lines
+- Documentation: @doc/ files for detailed patterns
 
 ## Your Task
 
-Perform a comprehensive reflection on this session and update all memory files with key learnings to improve future development workflows.
+Analyze session patterns and optimize memory files for maximum efficiency.
 
-### 1. Session Analysis
-Analyze what happened during this session:
-- What went well and what issues occurred
-- Critical patterns, workflows, or rules that should be remembered
-- Tools, commands, or approaches that were particularly effective
-- Mistakes or anti-patterns that should be avoided
+### 1. Usage Pattern Analysis
+```bash
+# Check current memory file sizes
+wc -l CLAUDE.md api/CLAUDE.md web-back-office/CLAUDE.md
 
-### 2. Memory File Updates
-
-Update these memory files with session learnings:
-
-**Root CLAUDE.md**
-- Add critical session learnings to existing auto-update rules
-- Strengthen workflow instructions that caused issues
-- Update commit message standards if needed
-- Enhance submodule handling guidance
-
-**Project-Specific CLAUDE.md Files**
-- `/api/CLAUDE.md`: Add API-specific learnings and patterns
-- `/web-back-office/CLAUDE.md`: Add frontend development insights  
-- `/web-portal/CLAUDE.md`: Update if relevant learnings apply
-
-**Documentation Files**
-- Update `/doc/git-workflow.md` with improved submodule handling
-- Enhance `/doc/development-patterns.md` with new patterns discovered
-- Update `/doc/commit-guide.md` if commit issues occurred
-
-### 3. Learning Categories
-Focus on these types of learnings:
-- **Critical Issues**: Problems that must never happen again
-- **Workflow Improvements**: More efficient ways to accomplish tasks
-- **Tool Discoveries**: New tools or commands that proved useful
-- **Pattern Recognition**: Recurring issues or successful approaches
-- **Best Practices**: Proven methods that should be standardized
-
-### 4. Memory Optimization
-- Keep all memory files within their specified line limits
-- Remove outdated information that's no longer relevant
-- Consolidate similar rules into single, clear statements
-- Cross-reference detailed information to @doc/ files when needed
-
-### 5. Format for Session Learnings
-Add sections like this to memory files:
-```
-## Session Learnings (Latest: YYYY-MM-DD)
-- **Critical**: [Most important issue to avoid]
-- **Effective**: [Best practice or tool that worked]
-- **Workflow**: [Process improvement discovered]
+# Identify optimization opportunities
 ```
 
-## Requirements
-- Be specific and actionable in updates
-- Include dates for session learnings (YYYY-MM-DD format)
-- Focus on preventing recurring issues
-- Maintain existing memory optimization rules
-- Do NOT include AI attribution in any commit messages
+### 2. Content Optimization Strategy
 
-Please proceed with this systematic reflection and memory update process.
+**Extract to @doc/ files:**
+- Code examples >5 lines
+- Detailed explanations
+- Comprehensive guides
+- One-time setup instructions
+
+**Keep in memory files:**
+- Commands used >50% of sessions
+- Critical warnings that prevent issues
+- Package manager enforcement
+- Port/directory checks
+
+### 3. Systematic Updates
+
+**Step 1: Content Audit**
+- Identify redundant content across files
+- Find verbose sections that can be compressed
+- Locate content that belongs in @doc/ files
+
+**Step 2: Optimization**
+- Compress command listings
+- Merge similar rules
+- Replace examples with references
+- Remove temporary content
+
+**Step 3: Validation**
+- Verify essential workflows preserved
+- Check cross-references work
+- Confirm size targets met
+
+### 4. Memory File Targets
+```
+Root CLAUDE.md: <30 lines (monorepo essentials)
+API CLAUDE.md: <100 lines (NestJS quick patterns)
+Web CLAUDE.md: <80 lines (React essentials)
+```
+
+### 5. Quality Gates
+- ✅ All critical commands preserved
+- ✅ Package manager warnings maintained  
+- ✅ Cross-references to @doc/ functional
+- ✅ Size limits respected
+- ✅ No redundant information
+
+### 6. Anti-Patterns to Remove
+- ❌ Dated session content
+- ❌ Meta-maintenance instructions
+- ❌ Verbose code examples
+- ❌ Redundant tech stack info
+- ❌ Temporary workflow notes
+
+**Focus**: Maximize actionable guidance per token while maintaining full functionality.

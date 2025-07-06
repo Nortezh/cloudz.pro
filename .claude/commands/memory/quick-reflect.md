@@ -1,44 +1,46 @@
 ---
-description: Quick session reflection and memory update
+description: Extract critical session insights for memory optimization
 allowed-tools:
   - Read
   - Edit
   - TodoWrite
 ---
 
-# Quick Session Reflection
+# Quick Session Insight Capture
 
 ## Context
-- Session type: Quick reflection for immediate memory updates
-- Focus: Most critical learnings only
-- Target: Root and most relevant project memory files
+Memory files are optimized for token efficiency. Only high-frequency, actionable insights should be added.
 
 ## Your Task
 
-Perform a quick reflection on this session and update memory files with the most critical learnings.
+**CRITICAL**: Do NOT add dated session learnings to memory files. Instead:
 
-### Quick Analysis
-1. **What went wrong?** Identify the top 1-2 critical issues from this session
-2. **What worked well?** Note 1-2 effective patterns or tools used  
-3. **Key takeaway?** What's the most important lesson to remember?
+### 1. Identify Actionable Insights
+- **Command/workflow** that was forgotten and caused delay
+- **Critical warning** that prevents major issues  
+- **Pattern** that will be used frequently
 
-### Memory Updates
-Update only the most relevant memory files:
-- Root `CLAUDE.md`: Add critical session learnings with today's date
-- Most relevant project `CLAUDE.md`: Add specific patterns discovered
-- `doc/git-workflow.md`: Update if git/submodule issues occurred
+### 2. Update Strategy
+- **High-frequency issues** → Add to relevant CLAUDE.md
+- **Detailed patterns** → Update @doc/ files
+- **One-time learnings** → Document in session notes only
 
-### Format for Updates
-Add a "Session Learnings" section with:
-```
-## Session Learnings (Latest: YYYY-MM-DD)
-- **Critical**: [Most important issue to avoid]
-- **Effective**: [Best practice or tool that worked]
-- **Workflow**: [Process improvement discovered]
+### 3. Memory File Updates (if applicable)
+```bash
+# Root CLAUDE.md: Only monorepo-critical items
+# API CLAUDE.md: Only NestJS/Prisma patterns used frequently  
+# Web CLAUDE.md: Only React/testing patterns used frequently
 ```
 
-## Requirements
-- Keep updates concise and actionable
-- Focus on preventing the biggest issues
-- Reinforce the most effective approaches
-- Include today's date in learnings sections
+### 4. Anti-Patterns to Avoid
+- ❌ Adding dated "Session Learnings" sections
+- ❌ Including temporary or one-time issues
+- ❌ Expanding memory files beyond size limits
+- ❌ Duplicating content already in @doc/ files
+
+### 5. Validation
+- Will this insight be needed in >50% of sessions?
+- Is it more essential than existing content?
+- Does it fit the optimized memory structure?
+
+**Remember**: Memory files are for immediate actionable guidance, not comprehensive session logs.
