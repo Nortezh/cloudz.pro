@@ -21,11 +21,12 @@
 4. External docs: Confirm @doc/ references work
 
 **Critical Session Learning (2025-07-06):**
-- **Test Infrastructure Safety**: NEVER use filesystem operations (`rm -rf`, file renaming) in tests
-- **Cross-Platform Testing**: Use environment variables over file manipulation for test setup
-- **Performance Optimization**: Database transactions + snapshots = 60-80% faster tests
-- **Modular Architecture**: Split monolithic helpers into domain-specific classes (Auth, Request, Validation)
-- **Test Command Execution**: Use `NODE_ENV=test npx jest` for E2E tests, not `bun test`
+- **E2E Testing Setup**: Playwright setup requires correct API endpoint patterns (`**/back-office/auth/*`)
+- **Authentication Mocking**: Use correct localStorage key `cloudz_auth_token` for auth state simulation
+- **Form Validation Testing**: Clear pre-filled dev credentials before testing empty form validation
+- **API Mocking Patterns**: Network interception must match actual endpoint structure in config.ts
+- **Test Reliability**: Add proper timeouts (10s) for async operations like redirects
+- **Cross-Browser E2E**: All major browsers (Chrome/Firefox/Safari) require consistent test patterns
 
 **Previous Session (2025-07-05):**
 - **NEVER assume file formats** - Always investigate existing patterns first

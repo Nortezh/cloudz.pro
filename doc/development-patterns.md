@@ -22,13 +22,14 @@
 4. **Validation**: Test critical functionality after optimization
 5. **Documentation**: Update @doc/ files with moved detailed content
 
-### Test Infrastructure Best Practices (Session Learning: 2025-07-06)
-1. **Test Safety**: NEVER use filesystem operations (`rm -rf`, `renameSync`) in test code - use environment variables
-2. **Cross-Platform Compatibility**: Environment variables work across Windows/macOS/Linux vs filesystem manipulation
-3. **Modular Architecture**: Split monolithic helpers into domain-specific classes (AuthTestHelper, RequestTestHelper, ValidationTestHelper)
-4. **Performance Optimization**: Database transactions + snapshots provide 60-80% faster test execution
-5. **Test Command Execution**: Use `NODE_ENV=test npx jest --config ./test/jest-e2e.json` for reliable E2E tests
-6. **Backwards Compatibility**: Maintain facade pattern for existing test code during refactoring
+### E2E Testing Best Practices (Session Learning: 2025-07-06)
+1. **API Mocking Precision**: Use exact endpoint patterns from config.ts (`**/back-office/auth/*` not `**/auth/*`)
+2. **Authentication State**: Use correct localStorage key (`cloudz_auth_token`) for auth simulation
+3. **Form Validation Testing**: Clear pre-filled development credentials before testing empty form validation
+4. **Async Operations**: Add proper timeouts (10s) for redirects and state changes
+5. **Cross-Browser Reliability**: Ensure patterns work consistently across Chrome/Firefox/Safari
+6. **Semantic Selectors**: Use `getByRole`, `getByLabel` over CSS selectors for maintainability
+7. **Test Organization**: Use proper `beforeEach` setup and isolated test data
 
 ### Investigation Best Practices (Session Learning: 2025-07-05)
 1. **Always Explore First**: Use Read/LS tools to examine existing patterns before creating files
